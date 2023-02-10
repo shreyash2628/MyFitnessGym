@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import NavBar from "./Components/NavBar";
+import Home from "./Pages/Home";
+import ExercisePage from "./Pages/ExercisePage";
+import LandingPage from "./Pages/LandingPage";
+import LoginPage from "./Pages/LoginPage";
+import SignUpPage from "./Pages/SignUpPage";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="  h-auto  ">
+
+      {/* <Home /> */}
+
+      <BrowserRouter>
+      <NavBar />
+
+     
+
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/exercise" element={<ExercisePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/SignUpPage" element={<SignUpPage />} />
+
+          
+
+
+          {/* <Route path="/addEmployeeDetails" element={<AddEmployeeDetails />} />
+          <Route path="/SignUpPage" element={<SignUpPage />} />
+          <Route path="/loginPage" element={<LoginPage />} /> */}
+        </Routes>
+      </BrowserRouter>
+
+     
+
+      {/* <Home/> */}
     </div>
   );
 }
